@@ -43,6 +43,10 @@ fastify.get('/api/v1', async () => {
   };
 });
 
+// Register election routes
+import { electionsRoutes } from './routes/elections';
+await fastify.register(electionsRoutes, { prefix: '/api/v1' });
+
 // Start server
 const start = async () => {
   try {
